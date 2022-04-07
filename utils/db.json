@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Nike Air Black",
+        "img": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "price": "79.99"
+    },
+    {
+        "id": 2,
+        "name": "Nike Green Shoe",
+        "img": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "price": "79.99"
+    },
+    {
+        "id": 3,
+        "name": "White Nike High-Top",
+        "img": "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "price": "92.99"
+    },
+    {
+        "id": 4,
+        "name": "White and Orange Atletic Shoe",
+        "img": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "price": "67.99"
+    },
+    {
+        "id": 5,
+        "name": "Nike Black and White Shoe",
+        "img": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "price": "97.99"
+    },
+    {
+        "id": 6,
+        "name": "Converse Maroon Shoe",
+        "img": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=698&q=80",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "price": "87.99"
+    }
+]
