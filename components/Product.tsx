@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Product = ({img, name, description, price}:Props) => (
-    <div className="mx-2 mb-3 rounded-sm shadow-md hover:cursor-pointer">
+    <div className="mx-2 mb-3 overflow-visible bg-white rounded-sm shadow-md hover:cursor-pointer">
         
         <div className="h-4/5 shadow-sm">
             <img className="aspect-auto" src={img} alt={name} title={name} />
