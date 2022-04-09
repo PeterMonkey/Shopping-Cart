@@ -1,12 +1,16 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
+import Modal from '../components/Modal'
 import Navbar from '../components/Navbar'
 import Stock from '../components/Stock'
 
 
 
 const Home: NextPage = () => {
+
+  const [modal, setModal] = useState(false)
+  console.log(modal)
   return (
     <div>
       <Head>
@@ -17,7 +21,13 @@ const Home: NextPage = () => {
 
       <main>
         <Navbar/>
-        <Stock/>
+        <Stock setModal={setModal}/>
+        {
+        modal?
+        <Modal setModal={setModal}/>
+        :
+        <span></span>
+        }
       </main>
 
       {/* <footer className={styles.footer}>
