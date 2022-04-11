@@ -1,16 +1,18 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
 import Head from 'next/head'
 import Modal from '../components/Modal'
 import Navbar from '../components/Navbar'
 import Stock from '../components/Stock'
+import { GlobalContext } from '../context/context'
+import { useContext } from 'react'
 
 
 
 const Home: NextPage = () => {
 
-  const [modal, setModal] = useState(false)
-  console.log(modal)
+  const {state} = useContext(GlobalContext)
+
+  console.log(state)
   return (
     <div>
       <Head>
@@ -21,10 +23,10 @@ const Home: NextPage = () => {
 
       <main>
         <Navbar/>
-        <Stock setModal={setModal}/>
+        <Stock/>
         {
-        modal?
-        <Modal setModal={setModal}/>
+        state?
+        <Modal/>
         :
         <span></span>
         }

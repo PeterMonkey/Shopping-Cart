@@ -10,7 +10,7 @@ const Navbar = () => (
             </a>
         </Link>
         <div className="mr-10">
-            <Notification count={2}/>
+            <Notification/>
             <Link href="/Cart" passHref>
                 <Cart/>
             </Link>
