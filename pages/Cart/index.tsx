@@ -2,8 +2,14 @@ import Head from "next/head"
 import CartStock from "../../components/CartStock"
 import Navbar from "../../components/Navbar"
 import DeleteItemAlert from "../../components/DeleteItemAlert"
+import { GlobalContext } from '../../context/context'
+import { useContext } from 'react'
+
 
 export default function Cart(){
+
+    const {alert} = useContext(GlobalContext)
+
     return(
        <>
        <Head>
@@ -11,7 +17,12 @@ export default function Cart(){
        </Head>
         <Navbar/>
         <CartStock/>
-        <DeleteItemAlert/>
+        {
+            alert ?
+            <DeleteItemAlert/>
+            :
+            <span></span>
+        }
        </>
     )
 }

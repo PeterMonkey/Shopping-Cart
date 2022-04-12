@@ -11,6 +11,8 @@ export const GlobalContext = createContext({
     state: false,
     data: {img: '', name:'', description:'', price:''},
     item: [{img: '', name:'', description:'', price:''}],
+    alert: false,
+    deleteItemCart: (value:boolean) => {},
     stateModal: (value:boolean) => {},
     dataModal: (data:ProductProps, value:boolean) => {},
     addProductCart: (value:boolean, data:ProductProps) => {}
@@ -46,10 +48,21 @@ export const GlobalProvider = ({children}:props) => {
     //Cart
     const [item, setItem] = useState<ProductProps[]>([])
 
+    //Delete Alert
+    const [alert, setAlert] = useState(false)
+
+    const deleteItemCart = (value:boolean) => {
+        return(
+            setAlert(value)
+        )
+    }
+
     return(
         <GlobalContext.Provider value={{
             state,
             data,
+            alert,
+            deleteItemCart,
             addProductCart,
             stateModal,
             dataModal,
