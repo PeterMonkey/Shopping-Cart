@@ -10,10 +10,10 @@ interface props {
 export const GlobalContext = createContext({
     state: false,
     data: {img: '', name:'', description:'', price:''},
-    count: 0,
+    item: [{img: '', name:'', description:'', price:''}],
     stateModal: (value:boolean) => {},
     dataModal: (data:ProductProps, value:boolean) => {},
-    productCount: (value:boolean) => {}
+    addProductCart: (value:boolean, data:ProductProps) => {}
 });
 
 //Provider
@@ -34,23 +34,26 @@ export const GlobalProvider = ({children}:props) => {
 
     //Notification
 
-    const [count, setCount] = useState(0)
+    //const [count, setCount] = useState(0)
 
-    const productCount = (value:boolean) => {
+    const addProductCart = (value:boolean, data:ProductProps) => {
         return(
-        setCount(count + 1),
-        setState(value)
+        setState(value),
+        setItem([...item, data])
         )
     }
+
+    //Cart
+    const [item, setItem] = useState<ProductProps[]>([])
 
     return(
         <GlobalContext.Provider value={{
             state,
             data,
-            count,
-            productCount,
+            addProductCart,
             stateModal,
             dataModal,
+            item
         }}>
             {children}
         </GlobalContext.Provider>

@@ -6,7 +6,7 @@ import {useContext} from 'react'
 
 const Modal = () => {
 
-    const {stateModal,productCount, data} = useContext(GlobalContext)
+    const {stateModal,addProductCart, data} = useContext(GlobalContext)
     console.log(data)
     const {img, name, description, price} = data
 
@@ -29,7 +29,7 @@ const Modal = () => {
                         <h3>$ {price}</h3>
                     </div>
 
-                    <div onClick={() => productCount(false)} className='mt-4 h-10 w-20 pl-[6px] bg-violet-500 hover:bg-violet-300 rounded-md shadow-lg shadow-violet-500/30'>
+                    <div onClick={() => addProductCart(false, data)} className='mt-4 h-10 w-20 pl-[6px] bg-violet-500 hover:bg-violet-300 rounded-md shadow-lg shadow-violet-500/30'>
                         <button className='text-sm text-white font-bold'>
                             Add to Car
                         </button>

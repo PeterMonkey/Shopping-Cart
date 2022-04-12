@@ -3,8 +3,9 @@ import {useContext} from 'react'
 
 const Notification = () => {
 
-    const {count} = useContext(GlobalContext)
-
+    const {item} = useContext(GlobalContext)
+    let count = item.length
+    
     return(
     <>
        {

@@ -1,21 +1,22 @@
+import { ProductProps } from "../utils/interfaces"
 
 
-const CartItem = () => {
+const CartItem = ({img, name, description, price}:ProductProps) => {
     return(
         <>
             <div className=" flex flex-row w-96 h-60 mb-4 bg-slate-50 shadow-lg rounded-md">
                 <div className="w-96 h-60 overflow-hidden rounded-md">
-                    <img className="aspect-auto" src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80" alt="" />
+                    <img className="aspect-auto" src={img} alt="" />
                 </div>
-                <div className="m-2 flex flex-col justify-center items-center">
-                    <h2 className="font-bold mb-8">Zapatos</h2>
-                    <p className="text-sm ml-2 mb-7 text-slate-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <div className="m-2 mt-4 flex flex-col justify-center items-center">
+                    <h2 className="font-bold mb-8">{name}</h2>
+                    <p className="text-sm ml-2 mb-4 text-slate-400">
+                        {description}
                     </p>
-                    <h2 className="mb-8">
-                        $90.00
+                    <h2 className="mb-4">
+                        ${price}
                     </h2>
-                    <button className="w-20 h-14 rounded-lg bg-violet-500 shadow-lg text-white font-bold">
+                    <button className="w-20 h-14 mb-6 rounded-lg bg-violet-500 shadow-lg shadow-violet-500/30 hover:bg-violet-300 text-white font-bold">
                         Comprar
                     </button>
                 </div>
