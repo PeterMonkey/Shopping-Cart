@@ -12,10 +12,13 @@ export const GlobalContext = createContext({
     data: {img: '', name:'', description:'', price:''},
     item: [{img: '', name:'', description:'', price:''}],
     alert: false,
-    deleteItemCart: (value:boolean) => {},
+    itemToDelete: '',
+    deleteItemCart: (name:string) => {},
     stateModal: (value:boolean) => {},
     dataModal: (data:ProductProps, value:boolean) => {},
-    addProductCart: (value:boolean, data:ProductProps) => {}
+    addProductCart: (value:boolean, data:ProductProps) => {},
+    deleteAction: (name:string) => {},
+    cancelDelete: () => {}
 });
 
 //Provider
@@ -50,11 +53,23 @@ export const GlobalProvider = ({children}:props) => {
 
     //Delete Alert
     const [alert, setAlert] = useState(false)
+    const [itemToDelete, setItemToDelete] = useState('')
 
-    const deleteItemCart = (value:boolean) => {
+    const deleteItemCart = (name:string) => {
         return(
-            setAlert(value)
+            setItemToDelete(name),
+            setAlert(true)
         )
+    }
+
+    const cancelDelete = () => {
+        setAlert(false)
+    }
+
+    const deleteAction = (name:string) => {
+        const newItem = item.filter(i => i.name !== name)
+        setItem(newItem)
+        setAlert(false)
     }
 
     return(
@@ -62,11 +77,14 @@ export const GlobalProvider = ({children}:props) => {
             state,
             data,
             alert,
+            itemToDelete,
+            item,
             deleteItemCart,
             addProductCart,
             stateModal,
             dataModal,
-            item
+            deleteAction,
+            cancelDelete
         }}>
             {children}
         </GlobalContext.Provider>
