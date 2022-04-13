@@ -15,12 +15,16 @@ export const GlobalContext = createContext({
     itemToDelete: '',
     amount: 200.00,
     buyState: false,
+    itemSelected: {img:'',name:'',price: 0},
     deleteItemCart: (name:string) => {},
     stateModal: (value:boolean) => {},
     dataModal: (data:ProductProps, value:boolean) => {},
     addProductCart: (value:boolean, data:ProductProps) => {},
     deleteAction: (name:string) => {},
-    cancelDelete: () => {}
+    cancelDelete: () => {},
+    buyToItem: (item:{}) => {},
+    cancelBuy: () => {},
+    actionBuy: (name:string, price:number) => {}
 });
 
 //Provider
@@ -76,6 +80,22 @@ export const GlobalProvider = ({children}:props) => {
     //Buy item
     const [amount, setAmout] = useState(200.00)
     const [buyState, setBuyState] = useState(false)
+    const [itemSelected, setItemSelected] = useState({img:'',name:'',price: 0})
+
+    const buyToItem = (item:any) => {
+        setBuyState(true)
+        setItemSelected(item)
+    }
+
+    const cancelBuy = () => {
+        setBuyState(false)
+    }
+
+    const actionBuy = (name:string, price:number) => {
+        const newItem = item.filter(i => i.name !== name)
+        setItem(newItem)
+        setAmout(amount - price)
+    }
 
     return(
         <GlobalContext.Provider value={{
@@ -86,12 +106,16 @@ export const GlobalProvider = ({children}:props) => {
             item,
             amount,
             buyState,
+            itemSelected,
             deleteItemCart,
             addProductCart,
             stateModal,
             dataModal,
             deleteAction,
-            cancelDelete
+            cancelDelete,
+            buyToItem,
+            cancelBuy,
+            actionBuy
         }}>
             {children}
         </GlobalContext.Provider>
