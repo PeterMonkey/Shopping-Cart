@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar"
 import DeleteItemAlert from "../../components/DeleteItemAlert"
 import { GlobalContext } from '../../context/context'
 import { useContext } from 'react'
+import BuyItem from "../../components/BuyItem"
 
 
 export default function Cart(){
@@ -23,6 +24,7 @@ export default function Cart(){
             :
             <span></span>
         }
+        <BuyItem/>
        </>
     )
 }
