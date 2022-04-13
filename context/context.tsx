@@ -13,6 +13,8 @@ export const GlobalContext = createContext({
     item: [{img: '', name:'', description:'', price:''}],
     alert: false,
     itemToDelete: '',
+    amount: 200.00,
+    buyState: false,
     deleteItemCart: (name:string) => {},
     stateModal: (value:boolean) => {},
     dataModal: (data:ProductProps, value:boolean) => {},
@@ -71,6 +73,9 @@ export const GlobalProvider = ({children}:props) => {
         setItem(newItem)
         setAlert(false)
     }
+    //Buy item
+    const [amount, setAmout] = useState(200.00)
+    const [buyState, setBuyState] = useState(false)
 
     return(
         <GlobalContext.Provider value={{
@@ -79,6 +84,8 @@ export const GlobalProvider = ({children}:props) => {
             alert,
             itemToDelete,
             item,
+            amount,
+            buyState,
             deleteItemCart,
             addProductCart,
             stateModal,

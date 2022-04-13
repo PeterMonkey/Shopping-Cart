@@ -9,7 +9,7 @@ import BuyItem from "../../components/BuyItem"
 
 export default function Cart(){
 
-    const {alert} = useContext(GlobalContext)
+    const {alert, buyState} = useContext(GlobalContext)
 
     return(
        <>
@@ -24,7 +24,12 @@ export default function Cart(){
             :
             <span></span>
         }
-        <BuyItem/>
+        {
+            buyState ?
+            <BuyItem/>
+            :
+            <span></span>
+        }
        </>
     )
 }
