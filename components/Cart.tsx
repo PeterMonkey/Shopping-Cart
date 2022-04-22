@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import {FaShoppingCart} from 'react-icons/fa'
 
 const Cart = React.forwardRef(({ onClick, href}:any) => {
@@ -10,4 +10,7 @@ const Cart = React.forwardRef(({ onClick, href}:any) => {
         </a>
     )
 })
+
+Cart.displayName = "Cart"
+
 export default Cart;
