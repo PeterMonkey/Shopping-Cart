@@ -35,8 +35,8 @@ export default function Cart(){
           <h1>© Pedro Fernandez </h1>
         </div>
         <div className=' flex flex-col justify-center items-center mt-3'>
-          <a href="https://nextjs.org/" target="_blank">Nextjs</a>
-          <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>
+          <a href="https://nextjs.org/" target="_blank" rel='noopener noreferrer'>Nextjs</a>
+          <a href="https://tailwindcss.com/" target="_blank" rel='noopener noreferrer'>Tailwind</a>
         </div>
       </footer>
        </>
