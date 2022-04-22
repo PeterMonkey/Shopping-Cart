@@ -1,5 +1,6 @@
 import Head from "next/head"
 import CartStock from "../../components/CartStock"
+import { AiFillGithub } from "react-icons/ai"
 import Navbar from "../../components/Navbar"
 import DeleteItemAlert from "../../components/DeleteItemAlert"
 import { GlobalContext } from '../../context/context'
@@ -35,6 +36,9 @@ export default function Cart(){
           <h1>© Pedro Fernandez </h1>
         </div>
         <div className=' flex flex-col justify-center items-center mt-3'>
+        <a href="https://github.com/PeterMonkey/Shopping-Cart" target="_blank" rel='noopener noreferrer'>
+            <AiFillGithub/>
+          </a>
           <a href="https://nextjs.org/" target="_blank" rel='noopener noreferrer'>Nextjs</a>
           <a href="https://tailwindcss.com/" target="_blank" rel='noopener noreferrer'>Tailwind</a>
         </div>
